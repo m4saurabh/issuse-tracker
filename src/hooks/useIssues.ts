@@ -26,8 +26,10 @@ const fetchIssues = async ({
   if (!response.ok) {
     throw new Error("Failed to fetch issues");
   }
+  const data = await response.json();
 
-  return response.json();
+  console.log(data);
+  return data;
 };
 
 export const useIssues = ({
